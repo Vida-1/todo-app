@@ -16,6 +16,16 @@
 - [Airbnb React/JSX Style Guide](https://airbnb.io/javascript/react/)
 
 ### Setup
+[AirBnB Styling Linter](https://medium.com/@Tunmise/set-up-eslint-with-airbnb-style-guide-in-5-minutes-d7b4cc5707f8)
+
+* Run this npm install eslint-config-airbnb —-save-dev to install airbnb style guide --DONE
+
+* Run this npm info “eslint-config-airbnb@latest" peerDependencies to list all the peer dependencies --DIDN'T WORK
+
+* You can either install the peer dependencies one after the other or use this shortcut if you have npm version 5+ 
+
+* Run this npx install-peerdeps --dev eslint-config-airbnb peer dependencies(if you have npm version 5+) --FAILED (Deprecated/too many arguments err)
+
 
 #### `.env` requirements (where applicable)
 
