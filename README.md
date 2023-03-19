@@ -27,12 +27,9 @@
 * Run this npx install-peerdeps --dev eslint-config-airbnb peer dependencies(if you have npm version 5+) --FAILED (Deprecated/too many arguments err)
 
 
-#### `.env` requirements (where applicable)
+#### `.env` requirements
 
-i.e.
-
-- `PORT` - Port Number
-- `DATABASE_URL` - URL to the running Postgres instance/db
+- `PORT` - 3000
 
 npm install uuid sass
 npm install nodemon - lets you run your server locally (may need to be installed multiple times while working on a project)
