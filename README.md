@@ -31,9 +31,10 @@
 
 - `PORT` - 3000
 
+npm install @mantine/core @mantine/hooks @mantine/form @mantine/dates dayjs @emotion/react
 npm install uuid sass
 npm install nodemon - lets you run your server locally (may need to be installed multiple times while working on a project)
-npm install prettierrc - a linter that only seems to exist to break stuff
+npm install prettierrc - a linter
 npm install jest - lets you use jest to test your code
 npm install supertest - lets you use some special part of jest to test your code (something to do with grouping things together and/or "describe" look it up!
 
@@ -51,4 +52,4 @@ npm install supertest - lets you use some special part of jest to test your code
 
 #### UML
 
-[Unified Modeling Language (UML) Diagram](./lab31UML.jpg)
+[Unified Modeling Language (UML) Diagram](lab31UML2.jpg)

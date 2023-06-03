@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useForm = (callback, defaultValues={}) => {
+const useFormLocal = (callback, defaultValues={}) => {
 
   const [values, setValues] = useState({});
 
@@ -41,4 +41,4 @@ const useForm = (callback, defaultValues={}) => {
   };
 };
 
-export default useForm;
+export default useFormLocal;
