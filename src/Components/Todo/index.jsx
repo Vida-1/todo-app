@@ -1,33 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import useFormLocal from '../../hooks/form';
-import { MantineProvider, Button, TextInput, Group, Box } from '@mantine/core';
-import { useForm } from '@mantine/form';
-// import { Slider, RangeSlider } from '@mantine/core';
+import { MantineProvider, Button} from '@mantine/core';
 import { v4 as uuid } from 'uuid';
 
-
-// function MantineDemo() { //from: https://mantine.dev/form/use-form/
-//   const form = useForm({
-//     initialValues: {
-//       itemDetails: "Item Details",
-//       assigneeName: "Assignee Name"
-//     }
-//   });
-//   return (
-//     <Box maw = { 300} mx = "auto" >
-//       <form onSubmit={form.onSubmit((values) => console.log(values))}>
-//         <TextInput
-//           label="To Do Item"
-//           placeholder="Item Details"
-//           {...form.getInputProps('itemDetails')}
-//         />
-//         <Group position="right" mt="md">
-//           <Button type="submit">Submit2</Button>
-//         </Group>
-//       </form>
-//   </Box>
-//   );
-// }
 
 const Todo = () => {
 
@@ -46,8 +21,12 @@ const Todo = () => {
   }
 
   function deleteItem(id) {
-    const items = list.filter( item => item.id !== id );
-    setList(items);
+    console.log(list);
+    // const items = list.splice( item => item.id !== id );
+    const items = list.splice(id);
+    console.log(list);
+    setList([items]);
+    
   }
 
   function toggleComplete(id) {
@@ -72,11 +51,12 @@ const Todo = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps 
   }, [list]);  
 
+
   return (
     <>
       <MantineProvider>
         <header data-testid="todo-header">
-          <h1 data-testid="todo-h1">To Do List: {incomplete} items pending</h1>
+          <h1 data-testid="todo-h1">{incomplete} items pending</h1>
         </header>
 
         <form onSubmit={handleSubmit}>
@@ -112,27 +92,13 @@ const Todo = () => {
             />
           </label>
 
-          {/* <label>
-            <Slider
-              color="indigo"
-              defaultValue={3}
-              const
-              marks={[
-                { value: 1, label: "1" },
-                { value: 2, label: "2" },
-                { value: 3, label: "3" },
-                { value: 4, label: "4" },
-                { value: 5, label: "5" },
-              ]}
-              onChange={handleChange}
-            ></Slider>
-          </label> */}
           <label>
             <Button variant="filled" color="indigo" type="submit">
               Add Item
             </Button>
           </label>
         </form>
+
 
         {list.map((item) => (
           <div key={item.id}>
@@ -145,6 +111,7 @@ const Todo = () => {
             </p>
             <div onClick={() => toggleComplete(item.id)}>
               Complete: {item.complete.toString()}
+            <Button variant="subtle" color="red" type="submit" onClick={deleteItem}>Delete Item</Button>
             </div>
             <hr />
           </div>

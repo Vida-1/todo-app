@@ -1,18 +1,14 @@
 import React from 'react';
-import { MantineProvider, Text } from '@mantine/core';
-
+import { MantineProvider} from '@mantine/core';
 import Todo from './Components/Todo';
+import Header from './Components/Header';
 
-export default class App extends React.Component {
+export default class App extends React.Component {  //this is starter code from mantine.dev/guides/cra/
   render() {
     return (
-      <MantineProvider withGlobalStyles withNormalizeCSS
-        theme={{
-          fontFamily: 'Open Sans, sans serif',
-          spacing: { xs: '1rem', sm: '1.2rem', md: '1.8rem', lg: '2.2rem', x1: '2.8rem' } ,
-  }
-} 
->
+      <MantineProvider theme={{fontFamily: 'Open Sans', fontSize: 'lg', padding: '25px 25px 25px 25px', margin: '.25rem .25rem .25rem .25rem'
+}}>
+        <Header />
         <Todo />
       </MantineProvider>
     );
